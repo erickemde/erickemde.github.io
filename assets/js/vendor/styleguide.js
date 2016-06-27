@@ -190,6 +190,6 @@ $(document).ready(function() {
     $("#userName").html(queries["username"].replace("+", " "));
     //update searchTerm
     console.log($(".searchTerm").html());
-    $(".searchTerm").html(queries["search"].replace("+", " "));
+    $(".searchTerm").html(decodeURI(queries["search"]).replace("+", " "));
 });
 };
