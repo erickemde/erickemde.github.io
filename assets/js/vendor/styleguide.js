@@ -145,3 +145,51 @@ $('.sidenav').on('click', 'a', function(e) {
     }
   });
 });
+
+//Erick's edits
+  var myQuerystring = document.location.search.substr(1);
+var myFilteredQueryString = "";
+
+  var queries = {};
+if(myQuerystring !=""){
+  $.each(myQuerystring.split('&'),function(c,q){
+    var i = q.split('=');
+    queries[i[0].toString()] = i[1].toString();
+    if (i[0].toString() != "search"){
+        if(c==0){
+          //myFilteredQueryString += "?";  
+        }else{
+          myFilteredQueryString += "&";  
+        }
+      myFilteredQueryString +=  i[0].toString() + "=" + i[1].toString();
+    }
+      console.log(myFilteredQueryString);
+  });
+  console.log(queries);
+
+
+$('a').each(function()
+{
+    var href = $(this).attr('href');
+
+    if(href) {
+        href += (href.match(/\?/) ? '&' : '?') + myFilteredQueryString;
+        $(this).attr('href', href);
+    }
+});
+
+$(document).ready(function() {
+    //add query string to search
+    $("#searchForm").submit(function(event) {
+        event.preventDefault(); // <-- add this
+        var action = $(this).attr('action');
+        action += (action.match(/\?/) ? '&' : '?') + myFilteredQueryString + "&search=" + $("[name=search]").val();
+        window.location.href = action;
+    });
+    //update user name
+    $("#userName").html(queries["username"].replace("+", " "));
+    //update searchTerm
+    console.log($(".searchTerm").html());
+    $(".searchTerm").html(queries["search"].replace("+", " "));
+});
+};

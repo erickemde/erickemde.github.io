@@ -60,9 +60,9 @@
       <h1> <a href="mandatory.html" accesskey="1" title="Home" aria-label="Home">HHS Ignites Learning System Prototype</a> </h1>
     </div>
     <ul class="usa-button-list usa-unstyled-list">
-      <li><strong>Joe User</strong></li>
+      <li><strong><span id="userName">Joe User</span></strong></li>
       <li>
-        <form class="usa-search usa-search-small" action="search.html">
+        <form id="searchForm" class="usa-search usa-search-small" action="search.html">
             <div role="search">
                 <label class="usa-sr-only" for="search-field-small">Search small</label>
                 <input name="search" id="search-field-small" type="search">
@@ -98,7 +98,7 @@
             <p>HHS Strategy and Impact in Urban Areas</p>
           </div>
           <div class="button_wrapper">
-            <button>Start</button>
+            <button formaction="index.html" type="submit">Start</button>
           </div>
         </div>
         <div class="usa-width-one-third course" style="border:1px solid #aeb0b5">
