@@ -5,37 +5,30 @@
 ================================================== -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <!-- Mobile Specific Metas
 ================================================== -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Title and meta description
 ================================================== -->
-
 <title>Mandatory Training</title>
 <meta property="og:title" content="Draft U.S. Web Design Standards | Visual style" />
 <meta name="description" content="">
 <meta property="og:description" content="" />
 <link rel="canonical" href="/visual-style/" />
-
 <!--[if lt IE 9]>
   <script src="assets/js/vendor/html5shiv.js"></script>
 <![endif]-->
-
 <!-- Favicons
 ================================================== -->
 <!-- 128x128 -->
 <link rel="shortcut icon" type="image/ico" href="assets/img/favicons/favicon.ico" />
 <link rel="icon" type="image/png" href="assets/img/favicons/favicon.png" />
-
 <!-- 192x192, as recommended for Android
   http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
   -->
 <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/favicon-192.png" />
-
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
 <link rel="apple-touch-icon-precomposed" href="assets/img/favicons/favicon-57.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
@@ -44,13 +37,11 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicons/favicon-114.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicons/favicon-144.png">
-
 <!-- CSS
 ================================================== -->
 <link rel="stylesheet" href="assets/css/prism.css">
 <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
-
 <body class="visual-style">
 <a class="skipnav" href="#main-content">Skip to main content</a>
 <header class="usa-site-header" role="banner">
@@ -59,7 +50,6 @@
     <div class="logo" id="logo">
       <h1> <a href="mandatory.html" accesskey="1" title="Home" aria-label="Home">HHS Ignites Learning System Prototype</a> </h1>
     </div>
-      
     <ul class="usa-button-list usa-unstyled-list">
       <li><strong><span id="userName">Joe User</span></strong></li>
       <li>
@@ -78,7 +68,12 @@
 <aside class="sidenav menu-content">
   <nav>
     <ul class="usa-sidenav-list">
-      <li> <a class="usa-current"  href="mandatory.html">Mandatory Training</a> </li>
+      <li> <a class="usa-current"  href="mandatory.html">Mandatory Training</a>
+      <ul class="usa-sidenav-sub_list">
+        <li> <a href="#incomplete">Training To Be Completed</a> </li>
+        <li> <a href="#complete">Training Completed</a> </li>
+      </ul>
+    </li>  
       <li> <a href="enrollments.html">My Enrollments</a> </li>
       <li> <a href="transcript.html">My Transcript</a> </li>
       <li> <a href="profile.html">My Profile</a> </li>
@@ -89,25 +84,25 @@
   <div class="styleguide-content usa-content">
     <h1>Mandatory Training</h1>
     <P class="usa-font-lead">This is training that has been assigned to you which you must complete. It is assigned to you based on where you work and what you do.</P>
-    <h3 class="usa-heading">Training To Be Completed:</h3>
+    <h3 class="usa-heading" id="incomplete">Training To Be Completed:</h3>
     <div class="preview">
       <div class="usa-grid-full">
         <div class="usa-width-one-whole course odd">
           <div class="title">
-            <p>Information Security Awareness Training</p>
+            <p><strong>Introduction to Counterintelligence and Insider Threat</strong></p>
           </div>
           <div class="dueDate">
-            <p>Due by: December 15, 2016</p>
+            <p>Due by: July 31, 2016</p>
           </div>
           <div class="button_wrapper">
-            <button>Start</button>
+            <button onclick="window.location.href='courses/cybersecurity/cybersecurity.html'">Start</button>
           </div>
         </div>
       </div>
       <div class="usa-grid-full">
         <div class="usa-width-one-whole course">
           <div class="title">
-            <p>Fraud, Waste and Abuse</p>
+            <p><strong>Fraud, Waste and Abuse</strong></p>
           </div>
           <div class="dueDate">
             <p>Due by: December 15, 2016</p>
@@ -123,7 +118,7 @@
       <div class="usa-grid-full">
         <div class="usa-width-one-whole course odd">
           <div class="title">
-            <p>The No Fear Act</p>
+            <p><strong>The No Fear Act</strong></p>
           </div>
           <div class="dueDate">
             <p>Due by: December 15, 2016</p>
@@ -136,7 +131,7 @@
       <div class="usa-grid-full">
         <div class="usa-width-one-whole course">
           <div class="title">
-            <p>Privacy Awareness Training</p>
+            <p><strong>Privacy Awareness Training</strong></p>
           </div>
           <div class="dueDate">
             <p>Due by: December 31, 2016</p>
@@ -147,12 +142,12 @@
         </div>
       </div>
     </div>
-    <h3 class="usa-heading">Training Completed:</h3>
+    <h3 class="usa-heading" id="complete">Training Completed:</h3>
     <div class="preview">
       <div class="usa-grid-full">
         <div class="usa-width-one-whole course odd">
           <div class="title">
-            <p>2016 Annual Ethics Training</p>
+            <p><strong>2016 Annual Ethics Training</strong></p>
           </div>
           <div class="dueDate">
             <p>Completed: December 1, 2015</p>
@@ -173,14 +168,13 @@
     </div>
   </footer>
 </div>
-<script src="assets/js/vendor/jquery-1.11.3.min.js"></script> 
+<script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
 <!--[if lt IE 9]>
   <script src="assets/js/vendor/selectivizr-min.js"></script>
   <script src="assets/js/vendor/respond.js"></script>
   <script src="assets/js/vendor/rem.min.js"></script>
-<![endif]--> 
-
-<script src="assets/js/vendor/styleguide.js"></script> 
+<![endif]-->
+<script src="assets/js/vendor/styleguide.js"></script>
 <script src="assets/js/uswds.min.js"></script>
 </body>
 </html>
