@@ -95,7 +95,7 @@
             <p>Due by: July 31, 2016</p>
           </div>
           <div class="button_wrapper">
-            <button onclick="window.location.href='courses/cybersecurity/cybersecurity.html'">Start</button>
+            <button id="counterIntel">Start</button>
           </div>
         </div>
       </div>
@@ -176,5 +176,12 @@
 <![endif]-->
 <script src="assets/js/vendor/styleguide.js"></script>
 <script src="assets/js/uswds.min.js"></script>
+<script>
+
+    $('#counterIntel').click(function(){
+    window.location.href='courses/cybersecurity/cybersecurity.html?' + myFilteredQueryString;
+    });
+
+</script>
 </body>
 </html>
