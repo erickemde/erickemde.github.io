@@ -76,6 +76,7 @@
       function playVideo(ISOTime) {
         //Erick's edits start
           $(".completionStatus").html("In Progress");
+		  $("#statementViewer").show( "fast" );
         //Erick's edits end
         var stmt = {};
         /*if (competency) {
