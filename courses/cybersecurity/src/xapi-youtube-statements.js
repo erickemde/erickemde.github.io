@@ -107,7 +107,8 @@
       function completeVideo(ISOTime) {
         //Erick's edits start
           $(".completionStatus").html("Completed");
-        //Erick's edits end
+ 		  $("#survey").show( "fast" );
+       //Erick's edits end
         var stmt = {};
         
         stmt.verb = ADL.verbs.completed;
