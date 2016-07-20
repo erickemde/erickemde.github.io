@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Mobile Specific Metas
+================================================== -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Title and meta description
+================================================== -->
+<title>Mandatory Training</title>
+<meta property="og:title" content="Draft U.S. Web Design Standards | Visual style" />
+<meta name="description" content="">
+<meta property="og:description" content="" />
+<link rel="canonical" href="/visual-style/" />
+<!--[if lt IE 9]>
+  <script src="assets/js/vendor/html5shiv.js"></script>
+<![endif]-->
+<!-- Favicons
+================================================== -->
+<!-- 128x128 -->
+<link rel="shortcut icon" type="image/ico" href="assets/img/favicons/favicon.ico" />
+<link rel="icon" type="image/png" href="assets/img/favicons/favicon.png" />
+<!-- 192x192, as recommended for Android
+  http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+  -->
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/favicon-192.png" />
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="assets/img/favicons/favicon-57.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicons/favicon-72.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicons/favicon-114.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicons/favicon-144.png">
+<!-- CSS
+================================================== -->
+<link rel="stylesheet" href="assets/css/prism.css">
+<link rel="stylesheet" href="assets/css/styleguide.css">
+</head>
+<body class="visual-style">
+<a class="skipnav" href="#main-content">Skip to main content</a>
+<header class="usa-site-header" role="banner">
+  <div class="usa-disclaimer"> <span class="usa-disclaimer-official"> <img class="usa-flag_icon" alt="US flag signifying that this is a United States Federal Government website" src="assets/img/us_flag_small.png"> Not an official website of the United States Government (but we're hoping)</span> <span class="usa-disclaimer-stage">This site is currently in alpha. <a href="https://18f.gsa.gov/dashboard/stages/#alpha">Learn more.</a></span> </div>
+  <nav class="usa-site-navbar"> <a class="menu-btn" href="#">Menu</a>
+    <div class="logo" id="logo">
+      <h1> <a href="mandatory.html" accesskey="1" title="Home" aria-label="Home">HHS Ignites Learning System Prototype</a> </h1>
+    </div>
+    <ul class="usa-button-list usa-unstyled-list">
+      <li><strong><span id="userName">Joe User</span></strong></li>
+      <li>
+        <form id="searchForm" class="usa-search usa-search-small" action="search.html">
+          <div role="search">
+            <label class="usa-sr-only" for="search-field-small">Search small</label>
+            <input name="search" id="search-field-small" type="search">
+            <button type="submit"> <span class="usa-sr-only">Search</span> </button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="overlay"></div>
+<aside class="sidenav menu-content">
+  <nav>
+    <ul class="usa-sidenav-list">
+      <li> <a class="usa-current"  href="mandatory.html">Mandatory Training</a>
+      <ul class="usa-sidenav-sub_list">
+        <li> <a href="#incomplete">Training To Be Completed</a> </li>
+        <li> <a href="#complete">Training Completed</a> </li>
+      </ul>
+    </li>  
+      <li> <a href="enrollments.html">My Enrollments</a> </li>
+      <li> <a href="transcript.html">My Transcript</a> </li>
+      <li> <a href="profile.html">My Profile</a> </li>
+    </ul>
+  </nav>
+</aside>
+<div class="main-content" id="main-content">
+
+  <div class="styleguide-content usa-content">
+    <header>
+      <p class="site-subheading">UI Components</p>
+                <h1 id="buttons">Buttons</h1>
+          
+            <div class="tooltip">
+              <p class="tooltip-text" id="tooltip-text-buttons">Read about the component maturity scale</p>
+              <a class="usa-label label-alpha" href="/about-our-work/component-maturity-scale/" aria-describedby="tooltip-text-buttons">
+                alpha
+              </a>
+            </div>
+    </header>
+    <p class="usa-font-lead">Use buttons to signal actions.</p>
+      <h6>Primary Buttons</h6>
+  <div class="button_wrapper">
+    <button>Default</button>
+    <button class="usa-button-active">Active</button>
+    <button class="usa-button-hover">Hover</button>
+  </div>
+  <div class="button_wrapper">
+    <button class="usa-button-primary-alt">Default</button>
+    <button class="usa-button-primary-alt usa-button-active">Active</button>
+    <button class="usa-button-primary-alt usa-button-hover">Hover</button>
+  </div>
+  </div>
+</div>
+<script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+<!--[if lt IE 9]>
+  <script src="assets/js/vendor/selectivizr-min.js"></script>
+  <script src="assets/js/vendor/respond.js"></script>
+  <script src="assets/js/vendor/rem.min.js"></script>
+<![endif]-->
+<script src="assets/js/vendor/styleguide.js"></script>
+<script src="assets/js/uswds.min.js"></script>
+<script>
+
+    $('#counterIntel').click(function(){
+    window.location.href='courses/cybersecurity/cybersecurity.html?' + myFilteredQueryString;
+    });
+
+</script>
+</body>
+</html>
