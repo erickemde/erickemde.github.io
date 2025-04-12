@@ -1,104 +1,1247 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<!-- Basic Page Needs
-================================================== -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Erick Emde - Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lora:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --border-color: #ddd;
+        }
 
-<!-- Mobile Specific Metas
-================================================== -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Title and meta description
-================================================== -->
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
 
-<title>Sign In</title>
-<meta property="og:title" content="Draft U.S. Web Design Standards | Visual style" />
-<meta name="description" content="">
-<meta property="og:description" content="" />
-<link rel="canonical" href="/visual-style/" />
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-<!--[if lt IE 9]>
-  <script src="assets/js/vendor/html5shiv.js"></script>
-<![endif]-->
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
 
-<!-- Favicons
-================================================== -->
-<!-- 128x128 -->
-<link rel="shortcut icon" type="image/ico" href="assets/img/favicons/favicon.ico" />
-<link rel="icon" type="image/png" href="assets/img/favicons/favicon.png" />
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-<!-- 192x192, as recommended for Android
-  http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-  -->
-<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/favicon-192.png" />
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: var(--primary-color);
+        }
 
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="assets/img/favicons/favicon-57.png">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicons/favicon-72.png">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicons/favicon-114.png">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicons/favicon-144.png">
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-<!-- CSS
-================================================== -->
-<link rel="stylesheet" href="assets/css/prism.css">
-<link rel="stylesheet" href="assets/css/styleguide.css">
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        .summary {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .experience {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .job {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:nth-child(even) .job {
+            background-color: var(--light-color);
+        }
+
+        .job:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .company {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .department {
+            font-style: italic;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .date {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .achievements {
+            margin-top: 15px;
+        }
+
+        .achievements h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .achievements ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .achievements li {
+            margin-bottom: 8px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:nth-child(even) .project {
+            background-color: var(--light-color);
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .project-description {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .project-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .skills {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            margin-bottom: 30px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        section:nth-child(even) .skill {
+            background-color: var(--light-color);
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-level {
+            margin-left: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .education {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .edu-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section:nth-child(even) .edu-item {
+            background-color: var(--light-color);
+        }
+
+        .edu-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .edu-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .edu-school {
+            font-weight: 500;
+        }
+
+        .edu-year {
+            color: #666;
+        }
+
+        .edu-description {
+            color: #666;
+        }
+
+        .awards {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .award {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section:nth-child(even) .award {
+            background-color: var(--light-color);
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .award-year {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .award-description ul {
+            margin-left: 20px;
+        }
+
+        .award-description li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .affiliations-list {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .affiliations-list li {
+            font-size: 1.1rem;
+            padding: 8px 0;
+        }
+
+        .affiliations-subheading {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 30px 0 15px;
+            text-align: center;
+        }
+
+        .affiliation-highlight {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section:nth-child(even) .affiliation-highlight {
+            background-color: var(--light-color);
+        }
+
+        .affiliation-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .affiliation-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .affiliation-link {
+            display: inline-block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .affiliation-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .achievements-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .achievement {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        section:nth-child(even) .achievement {
+            background-color: var(--light-color);
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .achievement ul {
+            margin-left: 20px;
+        }
+
+        .achievement li {
+            margin-bottom: 8px;
+        }
+
+        .languages-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .language {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section:nth-child(even) .language {
+            background-color: var(--light-color);
+        }
+
+        .language-name {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .language-level {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .language {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
 </head>
 
-<body class="visual-style">
-<a class="skipnav" href="#main-content">Skip to main content</a>
-<header class="usa-site-header" role="banner">
-  <div class="usa-disclaimer"> <span class="usa-disclaimer-official"> <img class="usa-flag_icon" alt="US flag signifying that this is a United States Federal Government website" src="assets/img/us_flag_small.png"> Not an official website of the United States Government (but we're hoping)</span> <span class="usa-disclaimer-stage">This site is currently in alpha. <a href="https://18f.gsa.gov/dashboard/stages/#alpha">Learn more.</a></span> </div>
-  <nav class="usa-site-navbar">
-    <div class="logo" id="logo">
-      <h1> <a href="mandatory.html" accesskey="1" title="Home" aria-label="Home">HHS Ignites Learning System Prototype</a> </h1>
-    </div>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="images/headshot.jpg" alt="Roman Erick Emde"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+                <h1>Roman Erick Emde</h1>
+                <p class="title">IT Specialist / Data Scientist</p>
+                <div class="contact-info">
+                    <a href="mailto:erickemde@gmail.com"><i class="fas fa-envelope"></i> erickemde@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/erickemde" target="_blank"><i class="fab fa-linkedin"></i>
+                        linkedin.com/in/erickemde</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  </nav>
-</header>
-<div class="overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#affiliations">Affiliations</a></li>
+        </ul>
+    </nav>
 
-<div class="main-content" id="main-content" style="width:100%">
-  <div class="styleguide-content usa-content">
-  <div style="margin:auto; width:320px;">
-  <form action="mandatory.html">
-    <fieldset>
-      <legend class="usa-drop_text">Sign in</legend>
-      <label for="username">Your Name</label>
-      <input id="username" name="username" type="text" autocapitalize="off" autocorrect="off">
-      <label for="email">Your Email</label>
-      <input id="email" name="email" type="text" autocapitalize="off" autocorrect="off">
-      <input type="submit" value="Sign in">
-    </fieldset>
-  </form>
-</div>
-  <footer class="usa-styleguide-footer">
-    <div class="usa-grid">
-      <div class="usa-width-one-half">
-        <p>Here's the left side of the footer.</p>
-        <p>Let's put something here</p>
-      </div>
-      <div class="usa-width-one-half usa-end-row">
-        <p>As a work of the United States government, this project is <a href="https://github.com/18F/web-design-standards/blob/master/LICENSE.md">in the public domain</a>.</p>
-      </div>
-    </div>
-  </footer>
-</div>
-</div>
-<script src="assets/js/vendor/jquery-1.11.3.min.js"></script> 
-<!--[if lt IE 9]>
-  <script src="assets/js/vendor/selectivizr-min.js"></script>
-  <script src="assets/js/vendor/respond.js"></script>
-  <script src="assets/js/vendor/rem.min.js"></script>
-<![endif]--> 
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="summary">
+                Experienced IT specialist with extensive expertise in programming, systems administration, and data
+                analytics.
+                Proven track record of implementing solutions that improve data reliability and accessibility.
+                Strong background in version control systems, data quality assurance, and cloud technologies.
+                Currently pursuing an MS in Data Analytics at Georgia Tech to further enhance technical capabilities and
+                analytical skills.
+            </p>
+        </div>
+    </section>
 
-<script src="assets/js/vendor/styleguide.js"></script> 
-<script src="assets/js/uswds.min.js"></script>
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">IT Specialist (Project Management)</h3>
+                            <p class="company">Centers for Disease Control and Prevention (CDC)</p>
+                            <p class="department">National Center for Injury Prevention and Control, Division of Injury
+                                Prevention<br>Data Analytics Branch, Programming and Web Applications Team</p>
+                        </div>
+                        <p class="date">December 2018 - Present</p>
+                    </div>
+                    <p>Lead programmer and systems administrator for the Web-based Injury Statistics Query and Reporting
+                        System (WISQARS, https://wisqars.cdc.gov/), a national data repository for injury statistics
+                        serving thousands of public health professionals, researchers, and policy makers. Responsible
+                        for ensuring system reliability, data quality, and implementing new features to enhance data
+                        accessibility and visualization capabilities.</p>
+
+                    <div class="achievements">
+                        <h4>Key Accomplishments:</h4>
+                        <ul>
+                            <li>Implemented a Git/DVC hybrid version control system, enabling efficient management of
+                                over 500GB of versioned data across cloud platforms (AWS S3 and Azure blob storage),
+                                reducing deployment errors by 95%.</li>
+                            <li>Developed Python automation scripts that reduced data validation time from 3 weeks to 3
+                                days for annual data releases, ensuring 99.9% data accuracy compared to source
+                                databases.</li>
+                            <li>Created a machine learning solution that automatically validates narrative field
+                                consistency in 500,000+ annual NEISS-AIP injury records, identifying discrepancies that
+                                manual review had previously missed.</li>
+                            <li>Established a biweekly code deployment pipeline using Jenkins, successfully executing
+                                over 50 production deployments per year with zero critical failures.</li>
+                            <li>Led development of the WISQARS Community Health Factors tool, enabling comparative
+                                analysis of injury data across social vulnerability indices for all 3,142 U.S. counties.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Information Systems Specialist</h3>
+                            <p class="company">Centers for Disease Control and Prevention (CDC)</p>
+                            <p class="department">Human Resources IT Department</p>
+                        </div>
+                        <p class="date">February 2011 - December 2018</p>
+                    </div>
+                    <p>Served as Learning Portal Project Lead for CDC Corporate University Division, managing the
+                        agency-wide learning management system that served over 15,000 CDC employees and contractors.
+                        Responsible for system administration, integration with HR systems, and developing custom
+                        applications to enhance learning delivery.</p>
+
+                    <div class="achievements">
+                        <h4>Key Accomplishments:</h4>
+                        <ul>
+                            <li>Successfully led the selection and implementation of the Saba learning management
+                                system, migrating 7,500+ learning records and 300+ courses with zero data loss.</li>
+                            <li>Developed 5 custom SharePoint applications including a teacher expertise database that
+                                connected 300+ internal subject matter experts with training needs across the agency.
+                            </li>
+                            <li>Created and maintained documentation and training materials that reduced help desk
+                                tickets by 40% and enabled successful knowledge transfer to 25+ LMS administrators.</li>
+                            <li>Established integration between HR systems and the LMS, automating record updates for
+                                1,000+ monthly training completions.</li>
+                            <li>Provided technical consulting to 12 CDC programs implementing their own e-learning
+                                solutions, resulting in standardized approaches across the agency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Instructional Technologist</h3>
+                            <p class="company">CDC Information Technology Support Contract (CITS) - Northrop Grumman IS
+                            </p>
+                        </div>
+                        <p class="date">July 2006 - February 2011</p>
+                    </div>
+                    <p>Provided technical consulting services for CDC's learning technology systems, focusing on LMS
+                        implementation, administration, and support. Collaborated with stakeholders to define
+                        requirements, evaluate solutions, and implement learning technologies.</p>
+
+                    <div class="achievements">
+                        <h4>Key Accomplishments:</h4>
+                        <ul>
+                            <li>Contributed to requirements gathering and selection process for agency-wide LMS,
+                                evaluating 8 potential solutions against 150+ functional requirements.</li>
+                            <li>Trained over 200 staff members on LMS functionality, resulting in 95% user satisfaction
+                                ratings.</li>
+                            <li>Developed technical documentation for 3 major LMS upgrades, ensuring smooth transitions
+                                with minimal service disruption.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <div class="project-img" style="background-color: white; padding: 0;">
+                        <img src="images/community-health-factors.png"
+                            alt="WISQARS Community Health Factors tool showing a map of the United States with fatal injury rates and social vulnerability index"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">WISQARS Community Health Factors</h3>
+                        <p class="project-description">Interactive tool enabling comparative analysis of injury data
+                            across social vulnerability indices for all U.S. counties.</p>
+                        <a href="https://wisqars.cdc.gov/communityhealthfactors/" class="project-link"
+                            target="_blank">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-img" style="background-color: white; padding: 0;">
+                        <img src="images/opioid-economic-burden.png"
+                            alt="Economic Cost of Opioid Use Disorder and Fatal Overdose dashboard showing a map of the United States with economic impact by state"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Opioid Economic Burden Dashboard</h3>
+                        <p class="project-description">Visualization tool displaying the economic impact of
+                            opioid-related injuries and fatalities across the United States.</p>
+                        <a href="https://wisqars.cdc.gov/" class="project-link" target="_blank">View WISQARS Portal</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-img"
+                        style="background-color: white; padding: 10px; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"
+                            style="max-width: 100%; max-height: 100%;">
+                            <!-- Background -->
+                            <rect width="800" height="400" fill="#f5f5f5" rx="10" ry="10" />
+
+                            <!-- Title -->
+                            <text x="400" y="40" font-family="Arial" font-size="20" font-weight="bold"
+                                text-anchor="middle" fill="#333">Git/DVC Hybrid Version Control Workflow</text>
+
+                            <!-- Local Development Environment -->
+                            <g transform="translate(80, 120)">
+                                <rect width="140" height="100" rx="5" ry="5" fill="#E0E0E0" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="70" y="40" font-family="Arial" font-size="16" font-weight="bold"
+                                    text-anchor="middle" fill="#333">Local Dev</text>
+                                <text x="70" y="60" font-family="Arial" font-size="14" text-anchor="middle"
+                                    fill="#333">Environment</text>
+
+                                <!-- Git & DVC Logos -->
+                                <g transform="translate(30, 80) scale(0.3)">
+                                    <path
+                                        d="M92.71 44.408L52.591 4.291c-2.31-2.311-6.057-2.311-8.369 0l-8.33 8.332L46.459 23.19c2.456-.83 5.272-.273 7.229 1.685 1.969 1.97 2.521 4.81 1.67 7.275l10.186 10.185c2.465-.85 5.307-.3 7.275 1.671 2.75 2.75 2.75 7.206 0 9.958-2.752 2.751-7.208 2.751-9.961 0-2.068-2.07-2.58-5.11-1.531-7.658l-9.5-9.499v24.997c.67.332 1.303.774 1.861 1.332 2.75 2.75 2.75 7.206 0 9.959-2.75 2.749-7.209 2.749-9.957 0-2.75-2.754-2.75-7.21 0-9.959.68-.679 1.467-1.193 2.307-1.537v-25.23c-.84-.344-1.625-.853-2.307-1.537-2.083-2.082-2.584-5.14-1.516-7.698L31.798 16.715 4.288 44.222c-2.311 2.313-2.311 6.06 0 8.371l40.121 40.118c2.31 2.311 6.056 2.311 8.369 0L92.71 52.779c2.311-2.311 2.311-6.06 0-8.371z"
+                                        fill="#F05032" />
+                                </g>
+                                <rect x="85" y="70" width="40" height="25" rx="4" ry="4" fill="#945DD6" />
+                                <text x="105" y="87" font-family="Arial" font-size="14" font-weight="bold"
+                                    text-anchor="middle" fill="white">DVC</text>
+                            </g>
+
+                            <!-- Commit & Push Process -->
+                            <g transform="translate(280, 120)">
+                                <rect width="140" height="100" rx="5" ry="5" fill="#D4E9FF" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="70" y="40" font-family="Arial" font-size="16" font-weight="bold"
+                                    text-anchor="middle" fill="#333">Commit</text>
+                                <text x="70" y="60" font-family="Arial" font-size="14" text-anchor="middle"
+                                    fill="#333">& Push</text>
+
+                                <!-- Git & DVC icons -->
+                                <g transform="translate(20, 80) scale(0.2)">
+                                    <path
+                                        d="M92.71 44.408L52.591 4.291c-2.31-2.311-6.057-2.311-8.369 0l-8.33 8.332L46.459 23.19c2.456-.83 5.272-.273 7.229 1.685 1.969 1.97 2.521 4.81 1.67 7.275l10.186 10.185c2.465-.85 5.307-.3 7.275 1.671 2.75 2.75 2.75 7.206 0 9.958-2.752 2.751-7.208 2.751-9.961 0-2.068-2.07-2.58-5.11-1.531-7.658l-9.5-9.499v24.997c.67.332 1.303.774 1.861 1.332 2.75 2.75 2.75 7.206 0 9.959-2.75 2.749-7.209 2.749-9.957 0-2.75-2.754-2.75-7.21 0-9.959.68-.679 1.467-1.193 2.307-1.537v-25.23c-.84-.344-1.625-.853-2.307-1.537-2.083-2.082-2.584-5.14-1.516-7.698L31.798 16.715 4.288 44.222c-2.311 2.313-2.311 6.06 0 8.371l40.121 40.118c2.31 2.311 6.056 2.311 8.369 0L92.71 52.779c2.311-2.311 2.311-6.06 0-8.371z"
+                                        fill="#F05032" />
+                                </g>
+                                <text x="30" y="87" font-family="Arial" font-size="10" text-anchor="middle"
+                                    fill="#333">Code</text>
+
+                                <rect x="90" y="70" width="40" height="25" rx="4" ry="4" fill="#945DD6" />
+                                <text x="110" y="87" font-family="Arial" font-size="12" font-weight="bold"
+                                    text-anchor="middle" fill="white">Data</text>
+                            </g>
+
+                            <!-- Cloud Storage -->
+                            <g transform="translate(480, 120)">
+                                <rect width="140" height="100" rx="5" ry="5" fill="#E1F5FE" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="70" y="35" font-family="Arial" font-size="16" font-weight="bold"
+                                    text-anchor="middle" fill="#333">Cloud Storage</text>
+
+                                <!-- AWS S3 -->
+                                <g transform="translate(30, 50)">
+                                    <rect width="40" height="40" rx="5" ry="5" fill="#FF9900" />
+                                    <text x="20" y="22" font-family="Arial" font-size="14" font-weight="bold"
+                                        text-anchor="middle" fill="white">S3</text>
+                                    <text x="20" y="36" font-family="Arial" font-size="9" text-anchor="middle"
+                                        fill="white">AWS</text>
+                                </g>
+
+                                <!-- Azure Blob -->
+                                <g transform="translate(80, 50)">
+                                    <rect width="40" height="40" rx="5" ry="5" fill="#0089D6" />
+                                    <text x="20" y="22" font-family="Arial" font-size="11" font-weight="bold"
+                                        text-anchor="middle" fill="white">Blob</text>
+                                    <text x="20" y="36" font-family="Arial" font-size="9" text-anchor="middle"
+                                        fill="white">Azure</text>
+                                </g>
+                            </g>
+
+                            <!-- Deployment Environments -->
+                            <g transform="translate(680, 120)">
+                                <rect width="40" height="100" rx="5" ry="5" fill="#E8F5E9" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="20" y="20" font-family="Arial" font-size="9" font-weight="bold"
+                                    text-anchor="middle" fill="#333">DEV</text>
+                                <line x1="5" y1="25" x2="35" y2="25" stroke="#333" stroke-width="1" />
+                                <text x="20" y="50" font-family="Arial" font-size="9" font-weight="bold"
+                                    text-anchor="middle" fill="#333">TEST</text>
+                                <line x1="5" y1="55" x2="35" y2="55" stroke="#333" stroke-width="1" />
+                                <text x="20" y="80" font-family="Arial" font-size="9" font-weight="bold"
+                                    text-anchor="middle" fill="#333">PROD</text>
+                            </g>
+
+                            <!-- Arrows connecting components -->
+                            <g>
+                                <!-- Local to Commit arrow -->
+                                <line x1="220" y1="170" x2="270" y2="170" stroke="#333" stroke-width="2" />
+                                <polygon points="270,170 260,165 260,175" fill="#333" />
+
+                                <!-- Commit to Cloud arrow - Git branch -->
+                                <path d="M430,145 Q455,145 470,145" stroke="#F05032" stroke-width="2" fill="none" />
+                                <polygon points="470,145 460,140 460,150" fill="#F05032" />
+
+                                <!-- Commit to Cloud arrow - DVC branch -->
+                                <path d="M430,190 Q455,190 470,190" stroke="#945DD6" stroke-width="2" fill="none" />
+                                <polygon points="470,190 460,185 460,195" fill="#945DD6" />
+
+                                <!-- Cloud to Environments arrow -->
+                                <line x1="630" y1="170" x2="670" y2="170" stroke="#333" stroke-width="2" />
+                                <polygon points="670,170 660,165 660,175" fill="#333" />
+                            </g>
+
+                            <!-- Process labels -->
+                            <g>
+                                <text x="245" y="155" font-family="Arial" font-size="10" text-anchor="middle"
+                                    fill="#333">Make Changes</text>
+                                <text x="450" y="135" font-family="Arial" font-size="10" text-anchor="middle"
+                                    fill="#333">Push Code (Git)</text>
+                                <text x="450" y="205" font-family="Arial" font-size="10" text-anchor="middle"
+                                    fill="#333">Push Data (DVC)</text>
+                                <text x="650" y="155" font-family="Arial" font-size="10" text-anchor="middle"
+                                    fill="#333">Deploy</text>
+                            </g>
+
+                            <!-- Data files annotation -->
+                            <g transform="translate(150, 250)">
+                                <rect width="500" height="30" rx="5" ry="5" fill="#FFECB3" stroke="#FFA000"
+                                    stroke-width="1" />
+                                <text x="250" y="20" font-family="Arial" font-size="14" text-anchor="middle"
+                                    fill="#333">Tracking 500GB+ of large data files across environments</text>
+                            </g>
+
+                            <!-- Environments annotation -->
+                            <g transform="translate(150, 290)">
+                                <rect width="500" height="60" rx="5" ry="5" fill="#E8F5E9" stroke="#388E3C"
+                                    stroke-width="1" />
+                                <text x="250" y="20" font-family="Arial" font-size="14" font-weight="bold"
+                                    text-anchor="middle" fill="#333">Automated Deployment Pipeline</text>
+                                <text x="250" y="45" font-family="Arial" font-size="12" text-anchor="middle"
+                                    fill="#333">Seamlessly deploy code and data to test, stage, and production
+                                    environments</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Git/DVC Hybrid Version Control System</h3>
+                        <p class="project-description">Custom implementation enabling efficient management of 500GB+ of
+                            versioned data across AWS S3 and Azure blob storage.</p>
+                        <details class="project-details">
+                            <summary class="project-details-summary">View Details</summary>
+                            <div class="project-details-content">
+                                <p>Implemented an innovative version control solution that combines Git and Data Version
+                                    Control (DVC) to efficiently manage over 500GB of data assets while maintaining
+                                    robust version control practices. This hybrid system addresses a critical challenge
+                                    in large-scale data management: tracking massive data files that exceed traditional
+                                    Git capacity.</p>
+                                <p>The workflow begins in the local development environment, where code changes are
+                                    tracked by Git while large data files are managed by DVC. When changes are
+                                    committed, DVC automatically pushes data files to optimized cloud storage (either
+                                    AWS S3 or Azure blob storage) and maintains references in the Git repository.</p>
+                                <p><strong>Key Technical Achievements:</strong></p>
+                                <ul>
+                                    <li>Engineered a seamless integration between Git and DVC, creating a unified
+                                        version control experience for all project assets</li>
+                                    <li>Implemented automated pipelines for deploying both code and data to test, stage,
+                                        and production environments</li>
+                                    <li>Reduced deployment errors by 95% through consistent versioning of both code and
+                                        data assets</li>
+                                    <li>Enabled efficient team collaboration on large datasets without compromising
+                                        version integrity</li>
+                                    <li>Created custom automation scripts that optimize cloud storage usage while
+                                        maintaining full version history</li>
+                                    <li>Established rollback procedures for rapid recovery from data-related incidents
+                                    </li>
+                                </ul>
+                                <p>This system has become a critical infrastructure component for the WISQARS platform,
+                                    ensuring data consistency across environments while supporting the platform's
+                                    continuous evolution and expansion.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">SAS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">JavaScript/Node.js</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">R</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-list">
+                        <div class="skill">
+                            <span class="skill-name">Amazon Web Services (AWS)</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Azure</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Git/GitHub</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">DVC</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Science & Analytics</h3>
+                    <div class="skill-list">
+                        <div class="skill">
+                            <span class="skill-name">Machine Learning</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Natural Language Processing</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Data Visualization</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Database Technologies</h3>
+                    <div class="skill-list">
+                        <div class="skill">
+                            <span class="skill-name">MS SQL Server</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">SAS data files</span>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education">
+                <div class="edu-item">
+                    <h3 class="edu-title">Master of Science in Analytics, Computational Data Analytics Track</h3>
+                    <div class="edu-details">
+                        <p class="edu-school">Georgia Institute of Technology, Atlanta, GA</p>
+                        <p class="edu-year">Expected 2026</p>
+                    </div>
+                    <p class="edu-description">
+                        Relevant Coursework: Computing for Data Analysis (CSE 6040), Introduction to Analytics Modeling
+                        (ISYE 6501),
+                        Computational Data Analysis: Learning, Mining, and Computation (ISYE 6740), Applied Natural
+                        Language Processing (CSE 8803)
+                    </p>
+                </div>
+
+                <div class="edu-item">
+                    <h3 class="edu-title">Master of Music, Music Theory</h3>
+                    <div class="edu-details">
+                        <p class="edu-school">Georgia State University, Atlanta, GA</p>
+                        <p class="edu-year"></p>
+                    </div>
+                    <p class="edu-description">
+                        Relevant Focus: Data Analysis with Technology, Multimedia Presentation
+                    </p>
+                </div>
+
+                <div class="edu-item">
+                    <h3 class="edu-title">Bachelor of Arts in Music</h3>
+                    <div class="edu-details">
+                        <p class="edu-school">Elmhurst College, Elmhurst, IL</p>
+                        <p class="edu-year"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards">
+                <div class="award">
+                    <h3 class="award-title">Time Off Award: Technical Lead Role in Identifying Data Discrepancies</h3>
+                    <p class="award-year">2023</p>
+                    <div class="award-description">
+                        <ul>
+                            <li>Led technical effort to identify and resolve data discrepancies in the WISQARS Community
+                                Health Factors tool</li>
+                            <li>Developed Python scripts for automated comparison of data sources</li>
+                            <li>Contributed to the successful public release of the Health Equity module</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="award">
+                    <h3 class="award-title">Special Act or Service Award: Providing Provisional Injury Data</h3>
+                    <p class="award-year">2022</p>
+                    <div class="award-description">
+                        <ul>
+                            <li>Developed automated system to query, validate, and present provisional mortality data
+                            </li>
+                            <li>Created Python scripts to enhance data quality control processes</li>
+                            <li>Established templates for future additions to the WISQARS platform</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="award">
+                    <h3 class="award-title">Special Act Award: Leadership on WISQARS Opioid Economic Burden Dashboard
+                    </h3>
+                    <p class="award-year">2021</p>
+                    <div class="award-description">
+                        <ul>
+                            <li>Provided leadership and technical ownership for the WISQARS Opioid Economic Burden
+                                Dashboard</li>
+                            <li>Successfully managed technical completion on schedule</li>
+                            <li>Collaborated with multiple stakeholders to resolve implementation challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="affiliations">
+        <div class="container">
+            <h2 class="section-title">Professional Affiliations</h2>
+            <div class="affiliations">
+                <div class="affiliation-highlight">
+                    <h3 class="affiliation-title">Villa International - Board of Directors</h3>
+                    <p class="affiliation-description">
+                        Serving on the board of a nonprofit organization that provides affordable, short-term housing
+                        for international visitors to Atlanta, primarily researchers at the CDC and Emory University.
+                        Villa International has hosted over 27,000 residents from 179 countries since 1972.
+                    </p>
+                    <a href="https://villainternational.org/" class="affiliation-link" target="_blank">Learn more about
+                        Villa International</a>
+                </div>
+
+                <div class="affiliation-highlight">
+                    <h3 class="affiliation-title">Scout Troop 477, Dunwoody GA - Board Member & Outdoor Chair</h3>
+                    <p class="affiliation-description">
+                        Serve on the troop committee as Outdoor Chair, responsible for planning and coordinating monthly
+                        scout trips. Duties include making reservations for campsites and activities, recruiting adult
+                        leadership for outdoor adventures, and ensuring all adult leaders receive appropriate training
+                        for the trips they will be leading.
+                    </p>
+                </div>
+
+                <h3 class="affiliations-subheading">Professional Memberships</h3>
+                <ul class="affiliations-list">
+                    <li>CDC Python Users Group - Member</li>
+                    <li>CDC R Users Group - Member</li>
+                    <li>CDC Section 508 for Websites Workgroup - Member</li>
+                    <li>CDC DataViz SAG - Member</li>
+                    <li>NCIPC Web Developers Workgroup - Member</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Additional Achievements</h2>
+            <div class="achievements-container">
+                <div class="achievement">
+                    <h3 class="achievement-title">Eagle Scout Award, Boy Scouts of America</h3>
+                    <ul>
+                        <li>Highest achievement and rank in the Boy Scouts of America</li>
+                        <li>Demonstrates leadership, service, and commitment to community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <div class="container">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-container">
+                <div class="language">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language">
+                    <span class="language-name">German</span>
+                    <span class="language-level">Advanced speaking, intermediate writing and reading</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/erickemde" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/erickemde" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:erickemde@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Roman Erick Emde. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+
+                // Update active link
+                document.querySelectorAll('nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    const currentId = '#' + section.getAttribute('id');
+                    document.querySelectorAll('nav a').forEach(navLink => {
+                        navLink.classList.remove('active');
+                        if (navLink.getAttribute('href') === currentId) {
+                            navLink.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
